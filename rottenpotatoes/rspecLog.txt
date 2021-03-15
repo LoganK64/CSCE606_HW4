@@ -1,2 +1,43 @@
-[31mCould not find proper version of rspec-core (3.7.1) in any of the sources[0m
-[33mRun `bundle install` to install missing gems.[0m
+FF*..
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) DirectorController If a valid director does not exist should display a message saying: 'movie name' has no director info
+     # Not yet implemented
+     # ./spec/director_spec.rb:16
+
+Failures:
+
+  1) DirectorController If a valid director exists should find movies by the same director
+     Failure/Error: get :show, id: "George Lucas"
+
+     ThreadError:
+       already initialized
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/http/response.rb:119:in `initialize'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:277:in `recycle!'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:617:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:67:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:514:in `get'
+     # ./spec/director_spec.rb:7:in `block (3 levels) in <top (required)>'
+
+  2) DirectorController If a valid director does not exist should go back to the rottenpotatoes home page
+     Failure/Error: get :show, id: nil
+
+     ThreadError:
+       already initialized
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/http/response.rb:119:in `initialize'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:277:in `recycle!'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:617:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:67:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:514:in `get'
+     # ./spec/director_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+Finished in 0.04645 seconds (files took 1.58 seconds to load)
+5 examples, 2 failures, 1 pending
+
+Failed examples:
+
+rspec ./spec/director_spec.rb:5 # DirectorController If a valid director exists should find movies by the same director
+rspec ./spec/director_spec.rb:12 # DirectorController If a valid director does not exist should go back to the rottenpotatoes home page
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/CSCE606_HW4/rottenpotatoes/coverage. 50 / 64 LOC (78.13%) covered.
