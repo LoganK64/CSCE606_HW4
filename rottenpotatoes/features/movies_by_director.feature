@@ -13,6 +13,9 @@ Background: movies in database
   | Alien        | R      |              |   1979-05-25 |
   | THX-1138     | R      | George Lucas |   1971-03-11 |
 
+  And  I am on the RottenPotatoes home page
+  Then 4 seed movies should exist
+  
 Scenario: add director to existing movie
   When I go to the edit page for "Alien"
   And  I fill in "Director" with "Ridley Scott"

@@ -1,8 +1,12 @@
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
-    Movie.create movie
+    Movie.create!(movie)
   end
+end
+
+Then /(.*) seed movies should exist/ do | n_seeds |
+  Movie.count.should be n_seeds.to_i
 end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
@@ -22,4 +26,8 @@ Then /I should see all the movies/ do
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
+end
+
+Then /the director of "(.*)" should be "(.*)"/ do |movie_title, movie_director|
+  expect((Movie.find_by title: movie_title).director == movie_director)
 end
